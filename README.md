@@ -1,36 +1,57 @@
-# Agent Planificateur pour Optimisation d'Énergie (Master Project)
+# ⚡ Agent Planificateur pour Optimisation d'Énergie
 
-## Résumé
-Application full-stack (Python + React + MySQL) qui aide un utilisateur (maison ou bâtiment) à :
-- modéliser la consommation énergétique à partir des **équipements** (lampes, clim, etc.)
-- intégrer un scénario **solaire** (panneaux) pour réduire la consommation réseau
-- estimer les **économies**, le **temps de rentabilité** (payback) et le gain net sur 3/5 ans
-- proposer des **recommandations** (LED, planification, isolation, usage clim)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Python](https://img.shields.io/badge/python-3.10+-green)
+![React](https://img.shields.io/badge/react-18-blue)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange)
+![License](https://img.shields.io/badge/license-MIT-yellow)
 
-## Données d'entrée (exemples)
-- Nombre de lampes, puissance (W), heures (soir, etc.)
-- Équipements électriques : clim, frigo, TV, chauffe-eau...
-- Type de localisation : `countryside` / `village` / `city` (utilisé pour adapter les recommandations)
-- Tarifs électricité par période (matin/midi/soir/nuit)
-- Configuration solaire : taille kWp, coût, PSH, PR
+**Projet Master** - Application full-stack intelligente pour l'optimisation énergétique des bâtiments résidentiels et commerciaux.
 
-## Méthode (académique)
-Le modèle calcule la consommation par période (matin/midi/soir/nuit) et applique le solaire
-principalement sur la période **midi**, ce qui correspond au cas d'usage : alimenter la clim
-par le solaire en journée.
+## 📊 Table des Matières
+- [🎯 Vue d'ensemble](#-vue-densemble)
+- [✨ Fonctionnalités](#-fonctionnalités)
+- [🏗️ Architecture Technique](#️-architecture-technique)
+- [⚙️ Installation](#️-installation)
+- [🚀 Utilisation](#-utilisation)
+- [📈 Modèle Mathématique](#-modèle-mathématique)
+- [🔧 API Endpoints](#-api-endpoints)
+- [🧪 Tests](#-tests)
+- [🤝 Contribution](#-contribution)
+- [📄 Licence](#-licence)
 
-### Formules
-- `kWh = (W × heures × quantité) / 1000`
-- `kWh_mois ≈ kWh_jour × (4.345 × jours_par_semaine)`
-- `Prod_mois ≈ kWp × PSH × PR × 30`
-- `Payback(années) = coût_installation / économies_annuelles`
+## 🎯 Vue d'ensemble
 
-## Lancement
-Voir `backend/README.md` et `frontend/README.md`.
+Application full-stack (Python + React + MySQL) qui aide les utilisateurs à :
+- **Modéliser** la consommation énergétique à partir des équipements (lampes, climatisation, etc.)
+- **Intégrer** un scénario solaire (panneaux photovoltaïques) pour réduire la consommation réseau
+- **Estimer** les économies, le temps de rentabilité (payback) et le gain net sur 3/5 ans
+- **Proposer** des recommandations intelligentes (LED, planification, isolation, usage clim)
 
-## Extensions possibles (pour mémoire Master)
-- Facturation dynamique : heures pleines/creuses réelles
-- Batterie (stockage) pour couvrir le soir
-- Prise en compte météo/irradiation via API (PVGIS, etc.)
-- Modèle CO2 (kgCO2/kWh) + reporting ESG
-"# devop" 
+## ✨ Fonctionnalités
+
+### 🔋 **Analyse Energétique Avancée**
+- Calcul de consommation par période (matin/midi/soir/nuit)
+- Modélisation des équipements électriques
+- Simulation de production solaire
+- Analyse de rentabilité (ROI, payback period)
+
+### ☀️ **Intégration Solaire Intelligente**
+- Configuration personnalisée des panneaux photovoltaïques
+- Optimisation de l'autoconsommation
+- Calcul de production selon l'orientation et l'inclinaison
+- Estimation des économies sur facture
+
+### 📊 **Dashboard Interactif**
+- Visualisation des données en temps réel
+- Graphiques de consommation/production
+- Tableau de bord des économies
+- Rapports détaillés PDF/Excel
+
+### 🎯 **Recommandations Personnalisées**
+- Suggestions basées sur le type de localisation
+- Optimisation des plages horaires
+- Améliorations d'efficacité énergétique
+- Analyse comparative avec bâtiments similaires
+
+## 🏗️ Architecture Technique
